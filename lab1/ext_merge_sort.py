@@ -1,3 +1,6 @@
+import time
+
+
 def parseAndSortFile(inputFile, outputFile):
     intList = []
     with open(inputFile) as r:
@@ -71,4 +74,6 @@ def sort():
     return
 
 
+start = time.time()
 sort()
+print('Execution Time: ', time.time() - start)
