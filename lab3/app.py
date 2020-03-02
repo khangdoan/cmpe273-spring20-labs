@@ -7,7 +7,7 @@ students = []
 query = QueryType()
 mut = MutationType()
 student = ObjectType("Student")
-
+classes = {}
 app = Flask(__name__)
 @app.route('/')
 def hello():
@@ -25,7 +25,7 @@ def getstudent(ID):
 
 @mut.field("createClass")
 def resolve_createClass(name):
-    pass
+    classes[name] = []
 
 @app.route("/graphql", methods=["GET"])
 def graphql_playgroud():
